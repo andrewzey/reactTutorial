@@ -6,10 +6,10 @@ var Box = React.createClass({
   render: function(){
     return (
       <div>
-        Hello World!
+        {this.props.text}
       </div>
     );
   }
 });
 
-React.render(<Box />, document.getElementById('content'));
+React.render(<Box text="X"/>, document.getElementById('content'));
