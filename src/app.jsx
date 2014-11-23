@@ -22,19 +22,27 @@ var Box = React.createClass({
     };
     return (
       <button style={style} onClick={this.handleClick}>
-        {this.state.value}
+        {this.props.value}
       </button>
     );
   }
 });
 
 var Row = React.createClass({
+  getInitialState: function(){
+    return {
+      values: ['-', '-', '-']
+    };
+  },
   render: function(){
+    var boxes = this.state.values.map(function(val, index){
+      return (
+        <Box value={val} key={index} />
+      )
+    });
     return (
       <div>
-        <Box />
-        <Box />
-        <Box />
+        {boxes}
       </div>
     );
   }
