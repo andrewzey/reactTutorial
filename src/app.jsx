@@ -3,18 +3,21 @@
 var React = require('react');
 
 var Box = React.createClass({
-  style: {
-    width: '100px',
-    height: '100px',
-    backgroundColor: 'red'
+  getInitialState: function(){
+    return {
+      value: 'X'
+    };
   },
   render: function(){
+    var style = {
+      width: '100px',
+      height: '100px',
+      backgroundColor: 'red'
+    };
     return (
-      <button style={this.style}>
-        {this.props.text}
-      </button>
+      <button style={style}>{this.state.value}</button>
     );
   }
 });
 
-React.render(<Box text="X" />, document.getElementById('content'));
+React.render(<Box />, document.getElementById('content'));
