@@ -21,9 +21,23 @@ var Box = React.createClass({
       backgroundColor: 'red'
     };
     return (
-      <button style={style} onClick={this.handleClick}>{this.state.value}</button>
+      <button style={style} onClick={this.handleClick}>
+        {this.state.value}
+      </button>
     );
   }
 });
 
-React.render(<Box />, document.getElementById('content'));
+var Row = React.createClass({
+  render: function(){
+    return (
+      <div>
+        <Box />
+        <Box />
+        <Box />
+      </div>
+    );
+  }
+});
+
+React.render(<Row />, document.getElementById('content'));
